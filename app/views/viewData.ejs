@@ -10,10 +10,50 @@
     <header class="masthead mb-auto">
       <%- include('./partials/header.ejs'); -%>
     </header>
-
+    <aside>
+      <button type="button" class="btn btn-outline-info">Nova Receita</button>
+      <button type="button" class="btn btn-outline-info">Nova Despesa</button>
+      <button type="button" class="btn btn-outline-info">Nova Categoria</button>
+      <button type="button" class="btn btn-outline-info">Remover Despesa</button>
+      <button type="button" class="btn btn-outline-info">Remover Receita</button>
+      <button type="button" class="btn btn-outline-info">Remover Categoria</button>
+      <button type="button" class="btn btn-outline-info">Histórico</button>
+    </aside>
     <main role="main" class="inner cover">
-        <h1>Data</h1>
-        <p>Aqui seram apresentados os dados no formato de planilha...</p>
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Vencimento</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>Doe</td>
+            <td>Doe</td>
+          </tr>
+          <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@example.com</td>
+            <td>Doe</td>
+            <td>Doe</td>
+          </tr>
+          <tr>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+            <td>Doe</td>
+            <td>Doe</td>
+          </tr>
+        </tbody>
+      </table>
     </main>
 
     <footer class="mastfoot mt-auto">
