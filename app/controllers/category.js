@@ -9,28 +9,31 @@ module.exports = {
         return db(TABLE_NAME).select('*')
     },
 
-    getProduct(category) {
+    getCategory(category) {
         let categoryId = category.id;
         return db(TABLE_NAME).where('id', categoryId).select('');
     },
 
-    insert(category) {
-        return db(TABLE_NAME).insert(category);
+    newCategory(category) {
+        return db(TABLE_NAME)
+            .insert({
+                name: category.fname,
+                user: category.fuser
+            });
     },
 
-    delete(category) {
+    delCategory(category) {
         return db(TABLE_NAME)
             .where('id', category.id)
             .del();
     },
 
-    update(category) {
+    updateCategory(category) {
         return db(TABLE_NAME)
             .where('id', category.id)
             .update({
-                name: category.nome,
-                description: category.descricao,
-                price: category.preco
+                name: category.fname,
+                user: category.fuser
             });
     }
 }
