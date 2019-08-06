@@ -10,6 +10,7 @@ var viewChartRouter = require('./app/routes/viewChart');
 var flowRouter = require('./app/routes/flow');
 var taskRouter = require('./app/routes/task');
 var helpRouter = require('./app/routes/help');
+var categoryRouter = require('./app/routes/category');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/viewChart', viewChartRouter);
 app.use('/flow', flowRouter);
 app.use('/task', taskRouter);
 app.use('/help', helpRouter);
+app.use('/category', categoryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
