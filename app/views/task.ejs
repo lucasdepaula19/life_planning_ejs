@@ -12,8 +12,17 @@
     </header>
 
     <main role="main" class="inner cover">
-        <h1>Task</h1>
-        <p>Aqui será apresentado as tarefas da aplicação...</p>
+      <h1>Task</h1>
+      <p>Aqui será apresentado as tarefas da aplicação...</p>
+
+      <p> ### <%= products[1].name %></p>
+
+      <ul>
+        <% for(var i=0; i < products.length; i++) { %>
+        <li><%= products[i].name %></li>
+        <% } %>
+      </ul>
+
     </main>
 
     <footer class="mastfoot mt-auto">

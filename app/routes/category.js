@@ -5,6 +5,7 @@ const Category = require('../controllers/Category');
 /* GET users listing. */
 router.post('/', function(req, res, next) {
   Category.newCategory(req.body);
+  res.send("Categoria Criada");
 });
 
 module.exports = router;

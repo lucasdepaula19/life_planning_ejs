@@ -104,7 +104,7 @@ body {
 
  footer{
   position: fixed;
-
+  bottom: 0;
  }
 
 .mastfoot {

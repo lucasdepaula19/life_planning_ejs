@@ -15,11 +15,10 @@ module.exports = {
     },
 
     newCategory(category) {
-        return db(TABLE_NAME)
-            .insert({
-                name: category.fname,
-                user: category.fuser
-            });
+        let obj = { name: category.fname, user: 'lucas.paula' }
+        //return db(TABLE_NAME).insert(obj);
+        return db.insert(obj).into(TABLE_NAME).then(function () {
+        });
     },
 
     delCategory(category) {
