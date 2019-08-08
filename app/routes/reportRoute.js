@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-const Category = require('../controllers/Category');
+const Category = require('../controllers/CategoryController');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('viewData', { title: 'Life Planning' });
+  res.render('report', { title: 'Life Planning' });
 });
 
 module.exports = router;

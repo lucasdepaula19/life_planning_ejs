@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const Category = require('../controllers/Category');
+const Category = require('../controllers/CategoryController');
 
 /* GET users listing. */
 // router.get('/', function(req, res, next) {
@@ -10,7 +10,7 @@ const Category = require('../controllers/Category');
 router.get('/', function (_, res) {
   Category.get()
     .then(function (products) {
-      console.log(products);
+      //console.log(products);
       res.render('task', { products });
     })
 });

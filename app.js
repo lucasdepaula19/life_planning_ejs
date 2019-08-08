@@ -4,13 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./app/routes/index');
-var viewDataRouter = require('./app/routes/viewData');
-var viewChartRouter = require('./app/routes/viewChart');
-var flowRouter = require('./app/routes/flow');
-var taskRouter = require('./app/routes/task');
-var helpRouter = require('./app/routes/help');
-var categoryRouter = require('./app/routes/category');
+var indexRouter = require('./app/routes/indexRoute');
+var reportRouter = require('./app/routes/reportRoute');
+var chartRouter = require('./app/routes/chartRoute');
+var flowRouter = require('./app/routes/flowRoute');
+var taskRouter = require('./app/routes/taskRoute');
+var helpRouter = require('./app/routes/helpRoute');
+var categoryRouter = require('./app/routes/categoryRoute');
 
 var app = express();
 
@@ -25,8 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './app/public')));
 
 app.use('/', indexRouter);
-app.use('/viewData', viewDataRouter);
-app.use('/viewChart', viewChartRouter);
+app.use('/report', reportRouter);
+app.use('/chart', chartRouter);
 app.use('/flow', flowRouter);
 app.use('/task', taskRouter);
 app.use('/help', helpRouter);
