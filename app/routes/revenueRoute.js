@@ -5,7 +5,7 @@ const Revenue = require('../controllers/RevenueController');
 /* GET users listing. */
 router.post('/', function(req, res, next) {
   Revenue.newRevenue(req.body);
-  res.send("Receita Criada");
+  res.redirect('/report');
 });
 
 module.exports = router;
