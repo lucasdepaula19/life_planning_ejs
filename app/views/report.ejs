@@ -6,59 +6,59 @@
 </head>
 
 <body class="text-center">
-  <div class="cover-container d-flex p-3 mx-auto flex-column">
+  <div class="p-3 mx-auto flex-column">
     <header>
       <%- include('./partials/header.ejs'); -%>
     </header>
-  </div>
-  <aside id="optionsInput">
-    <button type="button" class="btn btn-outline-info buttonInput">Nova Receita</button>
-    <button type="button" class="btn btn-outline-info buttonInput">Nova Despesa</button>
-    <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#categoryModal">Nova
-      Categoria</button>
-    <button type="button" class="btn btn-outline-info buttonInput">Remover Despesa</button>
-    <button type="button" class="btn btn-outline-info buttonInput">Remover Receita</button>
-    <button type="button" class="btn btn-outline-info buttonInput">Remover Categoria</button>
-    <button type="button" class="btn btn-outline-info buttonInput">Histórico</button>
-    <%- include('./partials/modal.ejs'); -%>
-  </aside>
-  <main role="main" id="mainReports">
-    <table class="table table-dark table-striped">
-      <thead>
-        <tr>
-          <th>Categoria</th>
-          <th>Vencimento</th>
-          <th>Descrição</th>
-          <th>Valor</th>
-          <th>Situação</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-          <td>Doe</td>
-          <td>Doe</td>
-        </tr>
-        <tr>
-          <td>Mary</td>
-          <td>Moe</td>
-          <td>mary@example.com</td>
-          <td>Doe</td>
-          <td>Doe</td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-          <td>Doe</td>
-          <td>Doe</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
-  <div class="cover-container d-flex p-3 mx-auto flex-column">
+
+    <aside id="optionsInput">
+      <button type="button" class="btn btn-outline-info buttonInput">Nova Receita</button>
+      <button type="button" class="btn btn-outline-info buttonInput">Nova Despesa</button>
+      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal"
+        data-target="#categoryModal">Nova
+        Categoria</button>
+      <button type="button" class="btn btn-outline-info buttonInput">Remover Despesa</button>
+      <button type="button" class="btn btn-outline-info buttonInput">Remover Receita</button>
+      <button type="button" class="btn btn-outline-info buttonInput">Remover Categoria</button>
+      <button type="button" class="btn btn-outline-info buttonInput">Histórico</button>
+      <%- include('./partials/modal.ejs'); -%>
+    </aside>
+    <main role="main" id="mainReports">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Vencimento</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>je</td>
+            <td>Doe</td>
+            <td>Doe</td>
+          </tr>
+          <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>ma</td>
+            <td>Doe</td>
+            <td>Doe</td>
+          </tr>
+          <tr>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>ju</td>
+            <td>Doe</td>
+            <td>Doe</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
     <footer>
       <%- include('./partials/footer.ejs'); -%>
     </footer>
