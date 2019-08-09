@@ -11,6 +11,8 @@ var flowRouter = require('./app/routes/flowRoute');
 var taskRouter = require('./app/routes/taskRoute');
 var helpRouter = require('./app/routes/helpRoute');
 var categoryRouter = require('./app/routes/categoryRoute');
+var expenseRouter = require('./app/routes/expenseRoute');
+var revenueRouter = require('./app/routes/revenueRoute');
 
 var app = express();
 
@@ -31,6 +33,8 @@ app.use('/flow', flowRouter);
 app.use('/task', taskRouter);
 app.use('/help', helpRouter);
 app.use('/category', categoryRouter);
+app.use('/expense', expenseRouter);
+app.use('/revenue', revenueRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

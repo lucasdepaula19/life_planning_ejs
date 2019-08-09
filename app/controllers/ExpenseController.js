@@ -9,22 +9,25 @@ module.exports = {
         return db(TABLE_NAME).select('*')
     },
 
-    getProduct(expense) {
+    getExpense(expense) {
         let expenseId = expense.id;
         return db(TABLE_NAME).where('id', expenseId).select('');
     },
 
-    insert(expense) {
-        return db(TABLE_NAME).insert(expense);
+    newExpense(expense) {
+        let obj = { name: expense.fname, due: expense.fdue, user: 'lucas.paula' }
+        return db.insert(obj).into(TABLE_NAME)
+        .then(function () {
+        });
     },
 
-    delete(expense) {
+    delExpense(expense) {
         return db(TABLE_NAME)
             .where('id', expense.id)
             .del();
     },
 
-    update(expense) {
+    updateExpense(expense) {
         return db(TABLE_NAME)
             .where('id', expense.id)
             .update({
