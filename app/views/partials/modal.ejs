@@ -1,4 +1,4 @@
-<!-- modal category -->
+<!-- modal category new -->
 <div class="modal fade modalClass" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -24,7 +24,7 @@
         </div>
     </div>
 </div>
-<!-- modal expense -->
+<!-- modal expense new -->
 <div class="modal fade modalClass" id="expenseModal" tabindex="-1" role="dialog" aria-labelledby="expenseModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -52,8 +52,88 @@
         </div>
     </div>
 </div>
-<!-- modal revenue -->
+<!-- modal revenue new -->
 <div class="modal fade modalClass" id="revenueModal" tabindex="-1" role="dialog" aria-labelledby="revenueModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="revenueModalLabel">Criar nova receita</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>     
+            <div>
+                <form action="/revenue" method="POST" id="">
+                    <div class="form-group modal-body">
+                        <label for="fname" class="col-form-label">Nome:</label>
+                        <input type="text" class="form-control" name="fname" id="fname">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal category del -->
+<div class="modal fade modalClass" id="categoryModalDel" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="categoryModalLabel">Excluir categoria</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>     
+            <div>
+                <form action="/category" method="POST" id="">
+                    <div class="form-group modal-body">
+                        <label for="fname" class="col-form-label">Nome:</label>
+                        <input type="text" class="form-control" name="fname" id="fname">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal expense del -->
+<div class="modal fade modalClass" id="expenseModalDel" tabindex="-1" role="dialog" aria-labelledby="expenseModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="expenseModalLabel">Criar nova despesa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div>
+                <form action="/expense" method="POST" id="">
+                    <div class="form-group modal-body">
+                        <label for="fname" class="col-form-label">Nome:</label>
+                        <input type="text" class="form-control" name="fname" id="fname">
+                        <label for="fdue" class="col-form-label">Vencimento:</label>
+                        <input type="date" class="form-control" name="fdue" id="fdue">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal revenue del -->
+<div class="modal fade modalClass" id="revenueModalDel" tabindex="-1" role="dialog" aria-labelledby="revenueModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
