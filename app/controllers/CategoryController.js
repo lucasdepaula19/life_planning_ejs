@@ -5,11 +5,11 @@ const db = knex(knexConfigs.development)
 const TABLE_NAME = 'tb_category'
 
 module.exports = {
-    get() {
-        return db(TABLE_NAME).select('*')
+    getCategory() {
+        return console.log(db(TABLE_NAME).select('*'));
     },
 
-    getCategory(category) {
+    getCategoryId(category) {
         let categoryId = category.id;
         return db(TABLE_NAME).where('id', categoryId).select('');
     },
@@ -23,9 +23,11 @@ module.exports = {
     },
 
     delCategory(category) {
-        return db(TABLE_NAME)
-            .where('id', category.id)
-            .del();
+        console.log(category);
+        //alert('Método delete funcionou com get: '+ category );
+        // return db(TABLE_NAME)
+        //     .where('id', category.id)
+        //     .del();
     },
 
     updateCategory(category) {
