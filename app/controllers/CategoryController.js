@@ -6,12 +6,16 @@ const TABLE_NAME = 'tb_category'
 
 module.exports = {
     getCategory() {
-        return console.log(db(TABLE_NAME).select('*'));
+        return db(TABLE_NAME).select('*');
     },
 
     getCategoryId(category) {
         let categoryId = category.id;
-        return db(TABLE_NAME).where('id', categoryId).select('');
+        
+        console.log(db.select().table(categoryId));
+        //return db('tb_category').where('id', categoryId);
+        //return db(TABLE_NAME).where('id', categoryId).select('');
+        return categoryId;
     },
 
     newCategory(category) {

@@ -18,4 +18,11 @@ router.get('/', function(req, res, next) {
   res.redirect('/report');
 });
 
+router.get('/:id', function(req, res, next) {
+  const id = req.params.id;
+  const result = Category.getCategoryId({id});
+  res.send(result);
+  //res.redirect('/report');
+});
+
 module.exports = router;
