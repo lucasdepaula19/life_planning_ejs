@@ -20,8 +20,8 @@ module.exports = {
 
     newCategory(category) {
         let obj = { name: category.fname, user: 'lucas.paula' }
-        //return db(TABLE_NAME).insert(obj);
-        return db.insert(obj).into(TABLE_NAME)
+        return db(TABLE_NAME).insert(obj)
+        //return db.insert(obj).into(TABLE_NAME)
         .then(function () {
         });
     },
