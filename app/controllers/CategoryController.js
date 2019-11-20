@@ -5,33 +5,60 @@ const db = knex(knexConfigs.development)
 const TABLE_NAME = 'tb_category'
 
 module.exports = {
-    getCategory() {
-        return db(TABLE_NAME).select('*');
+
+    async getCategory() {
+        let objRetorno = {};
+        objRetorno.status = false;
+        objRetorno.code = 500;
+
+        await db.select().table(TABLE_NAME)
+            .then(result => {
+                objRetorno.code = 200;
+                objRetorno.status = true;
+                objRetorno.data = result;
+            })
+            .catch(err => {
+                objRetorno.data = err;
+            });
+
+        return objRetorno;
     },
 
-    getCategoryId(category) {
-        let categoryId = category.id;
-        
-        console.log(db.select().table(categoryId));
-        //return db('tb_category').where('id', categoryId);
-        //return db(TABLE_NAME).where('id', categoryId).select('');
-        return categoryId;
+    async getCategoryId(categoryId) {
+        let objRetorno = {};
+        objRetorno.status = false;
+        objRetorno.code = 500;
+
+        await db(TABLE_NAME)
+            .select('*')
+            .where('id', categoryId)
+            .then(result => {
+                objRetorno.code = 200;
+                objRetorno.status = true;
+                objRetorno.data = result;
+            })
+            .catch(err => {
+                objRetorno.data = err;
+            });
+
+        return objRetorno;
     },
 
     newCategory(category) {
         let obj = { name: category.fname, user: 'lucas.paula' }
-        return db(TABLE_NAME).insert(obj)
         //return db.insert(obj).into(TABLE_NAME)
-        .then(function () {
-        });
+        return db(TABLE_NAME).insert(obj)
+            .then(function () {
+            });
     },
 
-    delCategory(category) {
-        console.log(category);
-        //alert('Método delete funcionou com get: '+ category );
-        // return db(TABLE_NAME)
-        //     .where('id', category.id)
-        //     .del();
+    delCategory(categoryId) {
+        let obj = { id: categoryId };
+        return db(TABLE_NAME)
+            .where(obj)
+            .del()
+            .then(function () {
+            });
     },
 
     updateCategory(category) {
@@ -43,3 +70,4 @@ module.exports = {
             });
     }
 }
+

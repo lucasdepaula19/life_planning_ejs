@@ -9,20 +9,29 @@ router.post('/', function(req, res, next) {
 });
 
 router.delete('/:id', function(req, res, next) {
-  Category.delCategory(req.body);
+  Category.delCategory(req.params.id);
   res.redirect('/report');
 });
 
 router.get('/', function(req, res, next) {
-  Category.getCategory();
-  res.redirect('/report');
+  
+  Category.getCategory()
+    .then(result => {
+      res.send(result);
+      //res.redirect('/report');
+    });
+  
 });
 
 router.get('/:id', function(req, res, next) {
-  const id = req.params.id;
-  const result = Category.getCategoryId({id});
-  res.send(result);
-  //res.redirect('/report');
+  Category.getCategoryId(req.params.id)
+  .then(result => {
+    res.status(result.code).send(result);
+    //res.redirect('/report');
+  })
+  .catch(err => {
+    res.status(err.code).send(err);
+  });
 });
 
 module.exports = router;
