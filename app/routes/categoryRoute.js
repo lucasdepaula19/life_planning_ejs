@@ -8,11 +8,6 @@ router.post('/', function (req, res, next) {
   res.redirect('/report');
 });
 
-// router.delete('/:id', function(req, res, next) {
-//   Category.delCategory(req.params.id);
-//   res.redirect('/report');
-// });
-
 router.post('/del', function (req, res, next) {
   Category.delCategory(req.body)
     .then(result => {
@@ -22,7 +17,6 @@ router.post('/del', function (req, res, next) {
       res.status(err.code).send(err);
     });
 });
-
 
 router.get('/', function (req, res, next) {
 
