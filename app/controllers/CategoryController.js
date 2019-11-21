@@ -44,21 +44,53 @@ module.exports = {
         return objRetorno;
     },
 
+    async getCategoryName(categoryName) {
+        let objRetorno = {};
+        console.log('categoryName: ' + JSON.stringify(categoryName));
+        await db(TABLE_NAME)
+            .select('id')
+            .where(categoryName)
+            .then(result => {
+                console.log('result getByName: ' + JSON.stringify(result));
+                objRetorno.data = result;
+            })
+            .catch(err => {
+                objRetorno.data = err;
+            });
+        console.log('objRetorno:' + JSON.stringify(objRetorno.data[0].id));
+        return objRetorno.data[0].id;
+    },
+
     newCategory(category) {
         let obj = { name: category.fname, user: 'lucas.paula' }
         //return db.insert(obj).into(TABLE_NAME)
-        return db(TABLE_NAME).insert(obj)
+        return db(TABLE_NAME)
+            .insert(obj)
             .then(function () {
             });
     },
 
-    delCategory(categoryId) {
-        let obj = { id: categoryId };
-        return db(TABLE_NAME)
-            .where(obj)
-            .del()
-            .then(function () {
+    async delCategory(category) {
+        let obj_name = { name: category.fname };
+        let exit;
+        console.log('obj_name: ' + JSON.stringify(obj_name));
+
+        await this.getCategoryName(obj_name)
+            .then(result => {
+                console.log('result: ' + JSON.stringify(result));
+                let obj = { id: result };
+                console.log('obj: ' + JSON.stringify(obj));
+                exit = db(TABLE_NAME)
+                    .where(obj)
+                    .del()
+                    .then(function () {
+                    });
+            })
+            .catch(err => {
+                exit = err;
             });
+        console.log('exit: ' + JSON.stringify(exit) );
+        return exit;
     },
 
     updateCategory(category) {
@@ -66,7 +98,9 @@ module.exports = {
             .where('id', category.id)
             .update({
                 name: category.fname,
-                user: category.fuser
+                user: 'lucas.paula'
+            })
+            .then(function () {
             });
     }
 }
