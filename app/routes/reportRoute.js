@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const Category = require('../controllers/CategoryController');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

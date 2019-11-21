@@ -62,7 +62,7 @@ module.exports = {
     },
 
     newExpense(expense) {
-        let obj = { name: expense.fname, user: 'lucas.paula' }
+        let obj = { category: expense.fcategory, name: expense.fname, due: expense.fdue, user: 'lucas.paula' }
         //return db.insert(obj).into(TABLE_NAME)
         return db(TABLE_NAME)
             .insert(obj)

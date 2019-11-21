@@ -12,21 +12,16 @@
     </header>
 
     <aside id="optionsInput">
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal"
-        data-target="#revenueModal">Nova Receita</button>
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal"
-        data-target="#expenseModal">Nova Despesa</button>
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal"
-        data-target="#categoryModal">Nova Categoria</button>
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal"
-      data-target="#expenseModalDel">Remover Despesa</button>
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal"
-      data-target="#revenueModalDel">Remover Receita</button>
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal"
-      data-target="#categoryModalDel">Remover Categoria</button>
+      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#revenueModal">Inserir Receita</button>
+      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#expenseModal">Inserir Despesa</button>
+      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#categoryModal">Adcionar Categoria</button>
+      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#expenseModalDel">Remover Despesa</button>
+      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#revenueModalDel">Remover Receita</button>
+      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#categoryModalDel">Remover Categoria</button>
       <button type="button" class="btn btn-outline-info buttonInput">Histórico</button>
-      <%- include('./partials/modal.ejs'); -%>
+      <%- include('./partials/modal.ejs', {title}); -%>
     </aside>
+
     <main role="main" id="mainReports">
       <table class="table table-dark table-striped">
         <thead>
@@ -40,7 +35,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>John</td>
+            <td><%= title %></td>
             <td>Doe</td>
             <td>je</td>
             <td>Doe</td>
