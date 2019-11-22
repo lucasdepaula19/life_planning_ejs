@@ -73,13 +73,10 @@ module.exports = {
     async delCategory(category) {
         let obj_name = { name: category.fname };
         let exit;
-        console.log('obj_name: ' + JSON.stringify(obj_name));
-
+    
         await this.getCategoryName(obj_name)
             .then(result => {
-                console.log('result: ' + JSON.stringify(result));
                 let obj = { id: result };
-                console.log('obj: ' + JSON.stringify(obj));
                 exit = db(TABLE_NAME)
                     .where(obj)
                     .del()
@@ -89,7 +86,6 @@ module.exports = {
             .catch(err => {
                 exit = err;
             });
-        console.log('exit: ' + JSON.stringify(exit) );
         return exit;
     },
 

@@ -41,9 +41,11 @@
                         <select class="form-control" name="fcategory" id="fcategory">
                             <option disabled selected value> -- select an option -- </option>
                             <!-- <option hidden disabled selected value> -- select an option -- </option> -->
-                            <% for(var i = 0; i < obj_category.length; i++) { %>
-                                <option value='<%= obj_category[i].name %>'><%= obj_category[i].name %></option>
-                            <% } %>
+                            <% for(var i = 0; i < objDados.categories.length; i++) { %>
+                                <option value='<%= objDados.categories[i].name %>'>
+                                    <%= objDados.categories[i].name %>
+                                </option>
+                                <% } %>
                         </select>
                         <label for="fname" class="col-form-label">Nome:</label>
                         <input type="text" class="form-control" name="fname" id="fname">
@@ -77,9 +79,11 @@
                         <select class="form-control" name="fcategory" id="fcategory">
                             <option disabled selected value> -- select an option -- </option>
                             <!-- <option hidden disabled selected value> -- select an option -- </option> -->
-                            <% for(var i = 0; i < obj_category.length; i++) { %>
-                                <option value='<%= obj_category[i].name %>'><%= obj_category[i].name %></option>
-                            <% } %>
+                            <% for(var i = 0; i < objDados.categories.length; i++) { %>
+                                <option value='<%= objDados.categories[i].name %>'>
+                                    <%= objDados.categories[i].name %>
+                                </option>
+                                <% } %>
                         </select>
                         <label for="fname" class="col-form-label">Nome:</label>
                         <input type="text" class="form-control" name="fname" id="fname">
@@ -99,7 +103,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="categoryModalLabel">Excluir ... categoria</h5>
+                <h5 class="modal-title" id="categoryModalLabel">Excluir categoria</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -107,8 +111,15 @@
             <div>
                 <form action="/category/del" method="POST">
                     <div class="form-group modal-body">
-                        <label for="fname" class="col-form-label">Nome:</label>
-                        <input type="text" class="form-control" name="fname" id="fname">
+                        <label for="fname" class="col-form-label">Nome</label>
+                        <select class="form-control" name="fname" id="fname">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 0; i < objDados.categories.length; i++) { %>
+                                <option value='<%= objDados.categories[i].name %>'>
+                                    <%= objDados.categories[i].name %>
+                                </option>
+                                <% } %>
+                        </select>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
@@ -132,8 +143,15 @@
             <div>
                 <form action="/expense/del" method="POST" id="">
                     <div class="form-group modal-body">
-                        <label for="fname" class="col-form-label">Nome:</label>
-                        <input type="text" class="form-control" name="fname" id="fname">
+                        <label for="fname" class="col-form-label">Nome</label>
+                        <select class="form-control" name="fname" id="fname">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 0; i < objDados.expenses.length; i++) { %>
+                                <option value='<%= objDados.expenses[i].name %>'>
+                                    <%= objDados.expenses[i].name %>
+                                </option>
+                                <% } %>
+                        </select>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
@@ -157,8 +175,15 @@
             <div>
                 <form action="/revenue/del" method="POST" id="">
                     <div class="form-group modal-body">
-                        <label for="fname" class="col-form-label">Nome:</label>
-                        <input type="text" class="form-control" name="fname" id="fname">
+                        <label for="fname" class="col-form-label">Nome</label>
+                        <select class="form-control" name="fname" id="fname">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 0; i < objDados.revenues.length; i++) { %>
+                                <option value='<%= objDados.revenues[i].name %>'>
+                                    <%= objDados.revenues[i].name %>
+                                </option>
+                            <% } %>
+                        </select>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
