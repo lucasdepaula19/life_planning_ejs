@@ -39,10 +39,12 @@
                         <label for="fcategory" class="col-form-label">Categoria</label>
                         <!-- <input type="text" class="form-control" name="fcategory" id="fcategory"> -->
                         <select class="form-control" name="fcategory" id="fcategory">
-                            <option value="Obrigatório">Obrigatório</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
+                            <option disabled selected value> -- select an option -- </option>
+                            <!-- <option hidden disabled selected value> -- select an option -- </option> -->
+                            <% for(var i = 0; i < obj_category.length; i++) { %>
+                                <% console.log(JSON.stringify(obj_category[i].name)) %>
+                                <option value='<%= obj_category[i].name %>'><%= obj_category[i].name %></option>
+                            <% } %>
                         </select>
                         <label for="fname" class="col-form-label">Nome:</label>
                         <input type="text" class="form-control" name="fname" id="fname">
