@@ -24,7 +24,41 @@
 
     <main role="main" id="mainReports">
 
-      <table class="table table-dark table-striped">
+      <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i = 0; i < objDados.revenues.length; i++) { %>
+            <tr>
+              <td>
+                <%= objDados.revenues[i].category %>
+              </td>
+              <td>
+                <%= objDados.revenues[i].name %>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <% } %>
+              <tr>
+                <td>Total de receitas</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-hover table-dark">
         <thead>
           <tr>
             <th>Categoria</th>
@@ -35,27 +69,28 @@
           </tr>
         </thead>
         <tbody>
-
-          <% for(var i = 0; i < objDados.revenues.length; i++) { %>
-            <tr>
-              <td><%= objDados.revenues[i].category %></td>
-              <td><%= objDados.revenues[i].name %></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          <% } %>
-
           <% for(var i = 0; i < objDados.expenses.length; i++) { %>
             <tr>
-              <td><%= objDados.expenses[i].category %></td>
-              <td><%= objDados.expenses[i].name %></td>
+              <td>
+                <%= objDados.expenses[i].category %>
+              </td>
+              <td>
+                <%= objDados.expenses[i].name %>
+              </td>
               <td></td>
-              <td><%= objDados.expenses[i].due %></td>
+              <td>
+                <%= objDados.expenses[i].due %>
+              </td>
               <td></td>
             </tr>
-          <% } %>
-    
+            <% } %>
+              <tr>
+                <td>Total de despesas</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
         </tbody>
       </table>
 
