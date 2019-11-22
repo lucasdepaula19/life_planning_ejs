@@ -46,18 +46,15 @@ module.exports = {
 
     async getRevenueName(revenueName) {
         let objRetorno = {};
-        console.log('revenueName: ' + JSON.stringify(revenueName));
         await db(TABLE_NAME)
             .select('id')
             .where(revenueName)
             .then(result => {
-                console.log('result getByName: ' + JSON.stringify(result));
                 objRetorno.data = result;
             })
             .catch(err => {
                 objRetorno.data = err;
             });
-        console.log('objRetorno:' + JSON.stringify(objRetorno.data[0].id));
         return objRetorno.data[0].id;
     },
 
@@ -73,13 +70,10 @@ module.exports = {
     async delRevenue(revenue) {
         let obj_name = { name: revenue.fname };
         let exit;
-        console.log('obj_name: ' + JSON.stringify(obj_name));
 
         await this.getRevenueName(obj_name)
             .then(result => {
-                console.log('result: ' + JSON.stringify(result));
                 let obj = { id: result };
-                console.log('obj: ' + JSON.stringify(obj));
                 exit = db(TABLE_NAME)
                     .where(obj)
                     .del()
@@ -89,7 +83,6 @@ module.exports = {
             .catch(err => {
                 exit = err;
             });
-        console.log('exit: ' + JSON.stringify(exit) );
         return exit;
     },
 

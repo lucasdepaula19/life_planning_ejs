@@ -46,18 +46,15 @@ module.exports = {
 
     async getCategoryName(categoryName) {
         let objRetorno = {};
-        console.log('categoryName: ' + JSON.stringify(categoryName));
         await db(TABLE_NAME)
             .select('id')
             .where(categoryName)
             .then(result => {
-                console.log('result getByName: ' + JSON.stringify(result));
                 objRetorno.data = result;
             })
             .catch(err => {
                 objRetorno.data = err;
             });
-        console.log('objRetorno:' + JSON.stringify(objRetorno.data[0].id));
         return objRetorno.data[0].id;
     },
 
