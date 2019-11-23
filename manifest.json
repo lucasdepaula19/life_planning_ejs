@@ -1,7 +1,7 @@
 {
 	"dir" : "ltr",
 	"lang" : "Portuguese",
-	"name" : "Life Planning",
+	"name" : "lifeplanning",
 	"scope" : "/",
 	"display" : "browser",
 	"start_url" : "https://lifeplanning.herokuapp.com/",
@@ -14,83 +14,83 @@
 	"prefer_related_applications" : "false",
 	"icons" : [
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/app/public/images/pwa_lifePlanning.ico",
 			"sizes": "44x44"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "48x48"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "1240x600"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "300x300"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "150x150"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "88x88"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "24x24"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "50x50"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "620x300"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "192x192"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "144x144"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "96x96"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "72x72"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "36x36"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "1024x1024"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "180x180"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "152x152"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "120x120"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "76x76"
 		},
 		{
-			"src": "public/images/pwa_lifePlanning.ico",
+			"src": "app/public/images/pwa_lifePlanning.ico",
 			"sizes": "128x128"
 		}],
 	"screenshots" : [],
