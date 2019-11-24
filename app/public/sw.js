@@ -4,12 +4,16 @@ const CACHE = "pwabuilder-page";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
 const offlineFallbackPage = [
-  '/',
-  '../views/index.ejs',
-  '/stylesheets/styles.css',
-  '/javascripts/main.js',
+/*   '/',
+  '../views/index.ejs', */
+  /* '/stylesheets/styles.css' */
+ /*  '/javascripts/main.js',
   '/manifest.json',
-  '/sw.js',
+  '/sw.js' */
+ /*  'http://localhost:3000/stylesheets/styles.css', */
+  /* 'https://lifeplanning.herokuapp.com/manifest.json' */
+  'https://lifeplanning.herokuapp.com/manifest.json',
+  'localhost:3000/manifest.json'
 ];
 
 // Install stage sets up the offline page in the cache and opens a new cache
