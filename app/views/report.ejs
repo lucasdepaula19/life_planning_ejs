@@ -10,10 +10,11 @@
     <%- include('./partials/header.ejs'); -%>
   </header>
 
-  <div class="p-3 mx-auto flex-column">
+  <!-- <div class="p-3 mx-auto flex-column"> -->
+  <main role="main" class="container">
     <aside id="optionsInput">
       <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#revenueModal">Adicionar Receita</button>
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#expenseModal">adicionar Despesa</button>
+      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#expenseModal">Adicionar Despesa</button>
       <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#categoryModal">Adicionar Categoria</button>
       <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#expenseModalDel">Remover Despesa</button>
       <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#revenueModalDel">Remover Receita</button>
@@ -22,8 +23,7 @@
       <%- include('./partials/modal.ejs', {objDados}); -%>
     </aside>
 
-    <main role="main" id="mainReports">
-
+    <div id="mainReports">
       <table class="table table-hover table-dark">
         <thead>
           <tr>
@@ -93,9 +93,8 @@
               </tr>
         </tbody>
       </table>
-
-    </main>
-  </div>
+    </div>
+  </main>
   <footer class="footer text-center">
     <%- include('./partials/footer.ejs'); -%>
   </footer>

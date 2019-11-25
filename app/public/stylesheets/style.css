@@ -1,4 +1,10 @@
 
+html{
+  /* position: relative; */
+  min-height: 100%;
+  position: relative;
+}
+
 html,
 body {
   color: #fff;
@@ -10,16 +16,16 @@ header{
 }
 
 #optionsInput {
-  /* margin: 0px; */
-  width: 300px;
+  margin: 1em;
+  width: 200px;
   height: 100%;
-  padding: 25px;
+  padding: 0;
   float: left;
 }
 
 .buttonInput {
-  padding: 4px 11px;
-  margin: 2px;
+  /* padding: 4px 11px; */
+  margin-bottom: 5px;
   width: 200px;
   height: 40px;
   /* border: 1px solid #0a0b14; */
@@ -32,7 +38,8 @@ header{
   /* max-width: 70%; */
   height: auto;
   float: left;
-  padding: 8px;
+  margin: 1em;
+  padding: 0;
 }
 
 .modalClass {
@@ -46,5 +53,7 @@ footer {
   width: 100%;
   bottom: 0;
   height: 50px;
-  padding-top: 2em;
+  margin-top: 2em;
+  /* centraliza na vertical */
+  /* line-height: 60px; */
 }
