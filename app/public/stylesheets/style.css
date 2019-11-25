@@ -5,6 +5,10 @@ body {
   background-color: #2a0044;
 }
 
+header{
+  background-color: rgba(0, 0, 0, 0.2)
+}
+
 #optionsInput {
   /* margin: 0px; */
   width: 300px;
@@ -38,4 +42,9 @@ body {
 
 footer {
   color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 50px;
+  padding-top: 2em;
 }

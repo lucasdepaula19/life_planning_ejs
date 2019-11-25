@@ -5,12 +5,12 @@
   <%- include('./partials/head.ejs'); -%>
 </head>
 
-<body id="bodyHome" class="text-center">
-  <header>
+<body id="bodyHome">
+  <header class="text-center">
     <%- include('./partials/header.ejs'); -%>
   </header>
-  
-  <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+  <div class="d-flex w-100 h-100 p-3 mx-auto flex-column text-center">
     <main role="main" class="inner cover">
       <h1>
         <%= title %>
@@ -19,12 +19,11 @@
         <%= title %>
       </p>
     </main>
-
-    <footer class="inner cover">
-      <%- include('./partials/footer.ejs'); -%>
-    </footer>
-    <%- include('./partials/scripts.ejs'); -%>
   </div>
+  <footer class="footer text-center">
+    <%- include('./partials/footer.ejs'); -%>
+  </footer>
+  <%- include('./partials/scripts.ejs'); -%>
 </body>
 
 </html>

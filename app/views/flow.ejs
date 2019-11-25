@@ -5,22 +5,21 @@
   <%- include('./partials/head.ejs'); -%>
 </head>
 
-<body class="text-center">
-  <header>
+<body>
+  <header class="text-center">
     <%- include('./partials/header.ejs'); -%>
   </header>
 
-  <div class="d-flex p-3 mx-auto flex-column">
+  <div class="d-flex p-3 mx-auto flex-column text-center">
     <main role="main" class="inner cover">
       <h1>Flow</h1>
       <p>Aqui será apresentado um construtor de flow chart...</p>
     </main>
-
-    <footer>
-      <%- include('./partials/footer.ejs'); -%>
-    </footer>
-    <%- include('./partials/scripts.ejs'); -%>
   </div>
+  <footer class="footer text-center">
+    <%- include('./partials/footer.ejs'); -%>
+  </footer>
+  <%- include('./partials/scripts.ejs'); -%>
 </body>
 
 </html>
