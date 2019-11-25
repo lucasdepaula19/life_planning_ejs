@@ -3,7 +3,7 @@
 	"lang" : "Portuguese",
 	"name" : "lifeplanning",
 	"scope" : "/",
-	"display" : "fullscreen",
+	"display" : "standalone",
 	"start_url" : "https://lifeplanning.herokuapp.com/",
 	"short_name" : "lifeplanning",
 	"description" : "",
