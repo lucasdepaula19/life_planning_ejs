@@ -1,53 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <%- include('./partials/head.ejs'); -%>
+  </head>
 
-<head>
-  <%- include('./partials/head.ejs'); -%>
-</head>
+  <body>
+    <header class="text-center">
+      <%- include('./partials/header.ejs'); -%>
+    </header>
 
-<body>
-  <header class="text-center">
-    <%- include('./partials/header.ejs'); -%>
-  </header>
-
-  <!-- <div class="p-3 mx-auto flex-column"> -->
-  <main role="main" class="container">
-    <aside id="optionsInput">
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#revenueModal">Adicionar Receita</button>
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#expenseModal">Adicionar Despesa</button>
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#categoryModal">Adicionar Categoria</button>
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#expenseModalDel">Remover Despesa</button>
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#revenueModalDel">Remover Receita</button>
-      <button type="button" class="btn btn-outline-info buttonInput" data-toggle="modal" data-target="#categoryModalDel">Remover Categoria</button>
-      <button type="button" class="btn btn-outline-info buttonInput">Histórico</button>
-      <%- include('./partials/modal.ejs', {objDados}); -%>
-    </aside>
-
-    <div id="mainReports">
-      <table class="table table-hover table-dark">
-        <thead>
-          <tr>
-            <th>Categoria</th>
-            <th>Descrição</th>
-            <th>Valor</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for(var i = 0; i < objDados.revenues.length; i++) { %>
-            <tr>
-              <td>
-                <%= objDados.revenues[i].category %>
-              </td>
-              <td>
-                <%= objDados.revenues[i].name %>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <% } %>
+    <!-- <div class="p-3 mx-auto flex-column"> -->
+    <main role="main" class="container">
+      <div class="row">
+        <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-3">
+          <button
+            type="button"
+            class="btn btn-outline-info buttonInput"
+            data-toggle="modal"
+            data-target="#revenueModal"
+          >
+            Adicionar Receita
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-info buttonInput"
+            data-toggle="modal"
+            data-target="#expenseModal"
+          >
+            Adicionar Despesa
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-info buttonInput"
+            data-toggle="modal"
+            data-target="#categoryModal"
+          >
+            Adicionar Categoria
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-info buttonInput"
+            data-toggle="modal"
+            data-target="#expenseModalDel"
+          >
+            Remover Despesa
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-info buttonInput"
+            data-toggle="modal"
+            data-target="#revenueModalDel"
+          >
+            Remover Receita
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-info buttonInput"
+            data-toggle="modal"
+            data-target="#categoryModalDel"
+          >
+            Remover Categoria
+          </button>
+          <button type="button" class="btn btn-outline-info buttonInput">
+            Histórico
+          </button>
+        </div>
+        <div class="table-responsive col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+          <table class="table min-whith table-hover table-dark">
+            <thead>
+              <tr>
+                <th>Categoria</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(var i = 0; i < objDados.revenues.length; i++) { %>
+              <tr>
+                <td>
+                  <%= objDados.revenues[i].category %>
+                </td>
+                <td>
+                  <%= objDados.revenues[i].name %>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <% } %>
               <tr>
                 <td>Total de receitas</td>
                 <td></td>
@@ -55,35 +97,35 @@
                 <td></td>
                 <td></td>
               </tr>
-        </tbody>
-      </table>
+            </tbody>
+          </table>
 
-      <table class="table table-hover table-dark">
-        <thead>
-          <tr>
-            <th>Categoria</th>
-            <th>Descrição</th>
-            <th>Valor</th>
-            <th>Vencimento</th>
-            <th>Situação</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for(var i = 0; i < objDados.expenses.length; i++) { %>
-            <tr>
-              <td>
-                <%= objDados.expenses[i].category %>
-              </td>
-              <td>
-                <%= objDados.expenses[i].name %>
-              </td>
-              <td></td>
-              <td>
-                <%= objDados.expenses[i].due %>
-              </td>
-              <td></td>
-            </tr>
-            <% } %>
+          <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th>Categoria</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Vencimento</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(var i = 0; i < objDados.expenses.length; i++) { %>
+              <tr>
+                <td>
+                  <%= objDados.expenses[i].category %>
+                </td>
+                <td>
+                  <%= objDados.expenses[i].name %>
+                </td>
+                <td></td>
+                <td>
+                  <%= objDados.expenses[i].due %>
+                </td>
+                <td></td>
+              </tr>
+              <% } %>
               <tr>
                 <td>Total de despesas</td>
                 <td></td>
@@ -91,14 +133,22 @@
                 <td></td>
                 <td></td>
               </tr>
-        </tbody>
-      </table>
-    </div>
-  </main>
-  <footer class="footer text-center">
-    <%- include('./partials/footer.ejs'); -%>
-  </footer>
-  <%- include('./partials/scripts.ejs'); -%>
-</body>
+            </tbody>
+          </table>
+        </div>
+        <%- include('./partials/modal.ejs', {objDados}); -%>
+      </div>
 
+      <!-- <aside id="optionsInput"> 
+      </aside> -->
+
+      <!-- <div id="mainReports">
+
+      </div> -->
+    </main>
+    <footer class="footer text-center">
+      <%- include('./partials/footer.ejs'); -%>
+    </footer>
+    <%- include('./partials/scripts.ejs'); -%>
+  </body>
 </html>
