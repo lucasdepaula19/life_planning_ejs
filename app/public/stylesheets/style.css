@@ -8,8 +8,13 @@ body {
   color: #fff;
 }
 
+main{
+
+}
+
 header{
-  background-color: rgba(0, 0, 0, 0.2)
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 1em;
 }
 
 #optionsInput {
@@ -50,6 +55,7 @@ footer {
   width: 100%;
   bottom: 0;
   min-height: 50px;
+  padding-top: 1em;
   /* padding-top: 2em; */
   /* centraliza na vertical */
   /* line-height: 60px; */
