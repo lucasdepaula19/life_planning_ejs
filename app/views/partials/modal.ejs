@@ -208,7 +208,27 @@
                 <form action="/revenue/insert" method="POST" id="">
                     <div class="form-group modal-body">
                         
-                        <label for="fname" class="col-form-label">Nome</label>
+                        <label for="fname" class="col-form-label">Ano</label>
+                        <select class="form-control" name="fname" id="fname">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 2015; i < 2040; i++) { %>
+                                <option value='<%= i %>'>
+                                    <%= i %>
+                                </option>
+                            <% } %>
+                        </select>
+
+                        <label for="fname" class="col-form-label">Mês</label>
+                        <select class="form-control" name="fname" id="fname">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 1; i < 13; i++) { %>
+                                <option value='<%= i %>'>
+                                    <%= i %>
+                                </option>
+                            <% } %>
+                        </select>
+
+                        <label for="fname" class="col-form-label">Receita</label>
                         <select class="form-control" name="fname" id="fname">
                             <option disabled selected value> -- select an option -- </option>
                             <% for(var i = 0; i < objDados.revenues.length; i++) { %>
@@ -217,7 +237,10 @@
                                 </option>
                             <% } %>
                         </select>
-                        
+
+                        <label for="fname" class="col-form-label">Valor</label>
+                        <input type="text" class="form-control" name="fvalor" id="fvalor">
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
@@ -228,28 +251,52 @@
         </div>
     </div>
 </div>
-<!-- modal expensive insert -->
-<div class="modal fade modalClass" id="expensiveModalInsert" tabindex="-1" role="dialog" aria-labelledby="expensiveModalLabel" aria-hidden="true">
+<!-- modal expense insert -->
+<div class="modal fade modalClass" id="expenseModalInsert" tabindex="-1" role="dialog" aria-labelledby="expenseModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="expensiveModalLabel">Inserir despesa</h5>
+                <h5 class="modal-title" id="expenseModalLabel">Inserir despesa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div>
-                <form action="/revenue/del" method="POST" id="">
+                <form action="/expense/insert" method="POST" id="">
                     <div class="form-group modal-body">
-                        <label for="fname" class="col-form-label">Nome</label>
+                        
+                        <label for="fname" class="col-form-label">Ano</label>
                         <select class="form-control" name="fname" id="fname">
                             <option disabled selected value> -- select an option -- </option>
-                            <% for(var i = 0; i < objDados.revenues.length; i++) { %>
-                                <option value='<%= objDados.revenues[i].name %>'>
-                                    <%= objDados.revenues[i].name %>
+                            <% for(var i = 2015; i < 2040; i++) { %>
+                                <option value='<%= i %>'>
+                                    <%= i %>
                                 </option>
                             <% } %>
                         </select>
+
+                        <label for="fname" class="col-form-label">Mês</label>
+                        <select class="form-control" name="fname" id="fname">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 1; i < 13; i++) { %>
+                                <option value='<%= i %>'>
+                                    <%= i %>
+                                </option>
+                            <% } %>
+                        </select>
+
+                        <label for="fname" class="col-form-label">Despesa</label>
+                        <select class="form-control" name="fname" id="fname">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 0; i < objDados.expenses.length; i++) { %>
+                                <option value='<%= objDados.expenses[i].name %>'>
+                                    <%= objDados.expenses[i].name %>
+                                </option>
+                            <% } %>
+                        </select>
+
+                        <label for="fname" class="col-form-label">Valor</label>
+                        <input type="text" class="form-control" name="fvalor" id="fvalor">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
