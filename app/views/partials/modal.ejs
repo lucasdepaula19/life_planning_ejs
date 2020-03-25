@@ -194,3 +194,69 @@
         </div>
     </div>
 </div>
+<!-- modal revenue insert -->
+<div class="modal fade modalClass" id="revenueModalInsert" tabindex="-1" role="dialog" aria-labelledby="revenueModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="revenueModalLabel">Inserir receita</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div>
+                <form action="/revenue/insert" method="POST" id="">
+                    <div class="form-group modal-body">
+                        
+                        <label for="fname" class="col-form-label">Nome</label>
+                        <select class="form-control" name="fname" id="fname">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 0; i < objDados.revenues.length; i++) { %>
+                                <option value='<%= objDados.revenues[i].name %>'>
+                                    <%= objDados.revenues[i].name %>
+                                </option>
+                            <% } %>
+                        </select>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal expensive insert -->
+<div class="modal fade modalClass" id="expensiveModalInsert" tabindex="-1" role="dialog" aria-labelledby="expensiveModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="expensiveModalLabel">Inserir despesa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div>
+                <form action="/revenue/del" method="POST" id="">
+                    <div class="form-group modal-body">
+                        <label for="fname" class="col-form-label">Nome</label>
+                        <select class="form-control" name="fname" id="fname">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 0; i < objDados.revenues.length; i++) { %>
+                                <option value='<%= objDados.revenues[i].name %>'>
+                                    <%= objDados.revenues[i].name %>
+                                </option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

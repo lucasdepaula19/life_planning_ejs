@@ -60,3 +60,8 @@ footer {
   /* centraliza na vertical */
   /* line-height: 60px; */
 }
+
+.title {
+  text-align: center !important;
+  padding-bottom: 20px;
+}
