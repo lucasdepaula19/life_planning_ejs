@@ -2,7 +2,7 @@ const knex = require('knex')
 const knexConfigs = require('../../knexfile')
 const db = knex(knexConfigs.development)
 
-const TABLE_NAME = 'tb_category'
+const TABLE_NAME = 'tb_values'
 
 module.exports = {
 
