@@ -36,7 +36,7 @@ app.use('/flow', flowRouter);
 app.use('/task', taskRouter);
 app.use('/help', helpRouter);
 app.use('/category', categoryRouter);
-app.use('/insertExpense', insertExpenseRouterRouter);
+app.use('/insertExpense', insertExpenseRouter);
 app.use('/insertRevenue', insertRevenueRouter);
 app.use('/expense', expenseRouter);
 app.use('/revenue', revenueRouter);

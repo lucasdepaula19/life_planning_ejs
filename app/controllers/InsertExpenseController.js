@@ -64,7 +64,7 @@ module.exports = {
         return db(TABLE_NAME)
             .insert(obj)
             .then(function () {
-            });
+            }); 
     },
 
     async delInsertExpense(insertExpense) {
