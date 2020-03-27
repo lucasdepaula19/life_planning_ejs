@@ -11,6 +11,8 @@ var flowRouter = require('./app/routes/flowRoute');
 var taskRouter = require('./app/routes/taskRoute');
 var helpRouter = require('./app/routes/helpRoute');
 var categoryRouter = require('./app/routes/categoryRoute');
+var insertExpenseRouter = require('./app/routes/insertExpenseRoute');
+var insertRevenueRouter = require('./app/routes/insertRevenueRoute');
 var expenseRouter = require('./app/routes/expenseRoute');
 var revenueRouter = require('./app/routes/revenueRoute');
 
@@ -34,6 +36,8 @@ app.use('/flow', flowRouter);
 app.use('/task', taskRouter);
 app.use('/help', helpRouter);
 app.use('/category', categoryRouter);
+app.use('/insertExpense', insertExpenseRouterRouter);
+app.use('/insertRevenue', insertRevenueRouter);
 app.use('/expense', expenseRouter);
 app.use('/revenue', revenueRouter);
 
