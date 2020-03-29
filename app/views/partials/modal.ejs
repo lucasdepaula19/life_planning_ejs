@@ -205,11 +205,11 @@
                 </button>
             </div>
             <div>
-                <form action="/revenue/insert" method="POST" id="">
+                <form action="/insertRevenue" method="POST" id="">
                     <div class="form-group modal-body">
                         
-                        <label for="fname" class="col-form-label">Ano</label>
-                        <select class="form-control" name="fname" id="fname">
+                        <label for="fyear" class="col-form-label">Ano</label>
+                        <select class="form-control" name="fyear" id="fyear">
                             <option disabled selected value> -- select an option -- </option>
                             <% for(var i = 2015; i < 2040; i++) { %>
                                 <option value='<%= i %>'>
@@ -218,8 +218,8 @@
                             <% } %>
                         </select>
 
-                        <label for="fname" class="col-form-label">Mês</label>
-                        <select class="form-control" name="fname" id="fname">
+                        <label for="fmonth" class="col-form-label">Mês</label>
+                        <select class="form-control" name="fmonth" id="fmonth">
                             <option disabled selected value> -- select an option -- </option>
                             <% for(var i = 1; i < 13; i++) { %>
                                 <option value='<%= i %>'>
@@ -238,8 +238,8 @@
                             <% } %>
                         </select>
 
-                        <label for="fname" class="col-form-label">Valor</label>
-                        <input type="text" class="form-control" name="fvalor" id="fvalor">
+                        <label for="fvalue" class="col-form-label">Valor</label>
+                        <input type="text" class="form-control" name="fvalue" id="fvalue">
 
                     </div>
                     <div class="modal-footer">

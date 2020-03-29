@@ -59,7 +59,7 @@ module.exports = {
     },
 
     newInsertRevenue(insertRevenue) {
-        let obj = { insertion: insertRevenue.fname, user: 'lucas.paula' }
+        let obj = { insertion: insertRevenue.fname, type: 'Receita', value: insertRevenue.fvalue, month: insertRevenue.fmonth, year: insertRevenue.fyear, user: 'lucas.paula' }
         //return db.insert(obj).into(TABLE_NAME)
         return db(TABLE_NAME)
             .insert(obj)
