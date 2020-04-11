@@ -79,6 +79,8 @@
             Inserir Despesa
           </button>
         </div>
+
+        <!-- Tabela de despesas e receitas -->
         <div class="table-responsive col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
           <table class="table min-whith table-hover table-dark">
             <thead>
@@ -91,15 +93,15 @@
               </tr>
             </thead>
             <tbody>
-              <% for(var i = 0; i < objDados.revenues.length; i++) { %>
+              <% for(var i = 0; i < objDados.insertRevenue.length; i++) { %>
               <tr>
+                <td></td>            
                 <td>
-                  <%= objDados.revenues[i].category %>
+                  <%= objDados.insertRevenue[i].insertion %>
                 </td>
                 <td>
-                  <%= objDados.revenues[i].name %>
+                  <%= objDados.insertRevenue[i].value %>
                 </td>
-                <td></td>
                 <td></td>
                 <td></td>
               </tr>
@@ -125,17 +127,19 @@
               </tr>
             </thead>
             <tbody>
-              <% for(var i = 0; i < objDados.expenses.length; i++) { %>
+              <% for(var i = 0; i < objDados.insertExpense.length; i++) { %>
               <tr>
                 <td>
-                  <%= objDados.expenses[i].category %>
+                  
                 </td>
                 <td>
-                  <%= objDados.expenses[i].name %>
+                  <%= objDados.insertExpense[i].insertion %>
                 </td>
-                <td></td>
                 <td>
-                  <%= objDados.expenses[i].due %>
+                  <%= objDados.insertExpense[i].value %>
+                </td>
+                <td>
+                  
                 </td>
                 <td></td>
               </tr>

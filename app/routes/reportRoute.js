@@ -3,6 +3,8 @@ var router = express.Router();
 const Category = require('../controllers/CategoryController');
 const Expense = require('../controllers/ExpenseController');
 const Revenue = require('../controllers/RevenueController');
+const InsertExpense = require('../controllers/InsertExpenseController');
+const InsertRevenue = require('../controllers/InsertRevenueController');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -48,6 +50,22 @@ async function load_dados() {
   await Revenue.getRevenue()
     .then(result => {
       obj_dados.revenues = result.data;
+    })
+    .catch(err => {
+      res.status(err.code).send(err);
+    });
+
+  await InsertExpense.getInsertExpense()
+    .then(result => {
+      obj_dados.insertExpense = result.data;
+    })
+    .catch(err => {
+      res.status(err.code).send(err);
+    });
+
+  await InsertRevenue.getInsertRevenue()
+    .then(result => {
+      obj_dados.insertRevenue = result.data;
     })
     .catch(err => {
       res.status(err.code).send(err);
