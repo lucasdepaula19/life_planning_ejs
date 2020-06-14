@@ -36,6 +36,7 @@
             <div>
                 <form action="/expense" method="POST" id="">
                     <div class="form-group modal-body">
+
                         <label for="fcategory" class="col-form-label">Categoria</label>
                         <!-- <input type="text" class="form-control" name="fcategory" id="fcategory"> -->
                         <select class="form-control" name="fcategory" id="fcategory">
@@ -45,12 +46,22 @@
                                 <option value='<%= objDados.categories[i].name %>'>
                                     <%= objDados.categories[i].name %>
                                 </option>
-                                <% } %>
+                            <% } %>
                         </select>
+
                         <label for="fname" class="col-form-label">Nome:</label>
                         <input type="text" class="form-control" name="fname" id="fname">
-                        <label for="fdue" class="col-form-label">Vencimento:</label>
-                        <input type="date" class="form-control" name="fdue" id="fdue">
+
+                        <label for="fdue" class="col-form-label">Dia do Vencimento:</label>
+                        <select class="form-control" name="fdue" id="fdue">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 1; i < 32; i++) { %>
+                                <option value='<%= i %>'>
+                                    <%= i %>
+                                </option>
+                            <% } %>
+                        </select>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
