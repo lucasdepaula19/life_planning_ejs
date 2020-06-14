@@ -82,8 +82,8 @@
 
         <!-- Tabela de despesas e receitas -->
         <div class="table-responsive col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
-          <table class="table min-whith table-hover table-dark">
-            <thead>
+          <table class="table min-whith table-striped table-light table-sm">
+            <thead class="thead-light">
               <tr>
                 <th>Categoria</th>
                 <th>Descrição</th>
@@ -94,17 +94,26 @@
             </thead>
             <tbody>
               <% for(var i = 0; i < objDados.insertRevenue.length; i++) { %>
-              <tr>
-                <td></td>            
-                <td>
-                  <%= objDados.insertRevenue[i].insertion %>
-                </td>
-                <td>
-                  <%= objDados.insertRevenue[i].value %>
-                </td>
-                <td></td>
-                <td></td>
-              </tr>
+                <% if( objDados.insertExpense[i].type == 'Receita' ){ %>
+                  <tr>
+                    <td>
+                      <% for(var j = 0; j < objDados.revenues.length; j++) { %>
+                        <% if( objDados.revenues[j].name == objDados.insertRevenue[i].insertion ){ %>
+                          <%= objDados.revenues[j].category %>
+                          <% console.log('insertRevenue: ' + objDados.insertRevenue[1].insertion) %>
+                        <% } %>
+                      <% } %>
+                    </td>            
+                    <td>
+                      <%= objDados.insertRevenue[i].insertion %>
+                    </td>
+                    <td>
+                      <%= objDados.insertRevenue[i].value %>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                <% } %>
               <% } %>
               <tr>
                 <td>Total de receitas</td>
@@ -116,8 +125,8 @@
             </tbody>
           </table>
 
-          <table class="table table-hover table-dark">
-            <thead>
+          <table class="table min-whith table-striped table-light table-sm">
+            <thead class="thead-light">
               <tr>
                 <th>Categoria</th>
                 <th>Descrição</th>
@@ -128,29 +137,40 @@
             </thead>
             <tbody>
               <% for(var i = 0; i < objDados.insertExpense.length; i++) { %>
-              <tr>
-                <td>
-                  
-                </td>
-                <td>
-                  <%= objDados.insertExpense[i].insertion %>
-                </td>
-                <td>
-                  <%= objDados.insertExpense[i].value %>
-                </td>
-                <td>
-                  
-                </td>
-                <td></td>
-              </tr>
-              <% } %>
+                <% if( objDados.insertExpense[i].type == 'Despesa' ){ %>
+                  <tr>
+                    <td>
+                      <% for(var j = 0; j < objDados.expenses.length; j++) { %>
+                        <% if( objDados.expenses[j].name == objDados.insertExpense[i].insertion ){ %>
+                          <%= objDados.expenses[j].category %>
+                        <% } %>
+                      <% } %>
+                    </td>
+                    <td>
+                      <%= objDados.insertExpense[i].insertion %>
+                    </td>
+                    <td>
+                      <%= objDados.insertExpense[i].value %>
+                    </td>
+                    <td>
+                      <% for(var j = 0; j < objDados.expenses.length; j++) { %>
+                        <% if( objDados.expenses[j].name == objDados.insertExpense[i].insertion ){ %>
+                          <%= objDados.expenses[j].due %>
+                        <% } %>
+                      <% } %>
+                    </td>
+                    <td>
+                    </td>
+                  </tr>
+                <% } %>
+              <% } %>  
               <tr>
                 <td>Total de despesas</td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-              </tr>
+              </tr>   
             </tbody>
           </table>
         </div>
