@@ -43,10 +43,9 @@ footer {
 
 .linha1 {
   display: inline;
-
   padding: 1em;
 }
 
-.formDate{
-  margin: 1em;
+.teste {
+  text-align: center !important;
 }
