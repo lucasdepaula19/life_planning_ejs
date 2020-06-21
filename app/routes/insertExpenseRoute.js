@@ -18,6 +18,16 @@ router.post('/del', function (req, res, next) {
     });
 });
 
+router.post('/update', function (req, res, next) {
+  InsertExpense.updateInsertExpense(req.body)
+    .then(result => {
+      res.redirect('/report');
+    })
+    .catch(err => {
+      res.status(err.code).send(err);
+    });
+});
+
 router.get('/', function (req, res, next) {
 
   InsertExpense.getInsertExpense()
@@ -31,11 +41,24 @@ router.get('/', function (req, res, next) {
 
 });
 
+
 router.get('/:id', function (req, res, next) {
   InsertExpense.getInsertExpenseId(req.params.id)
     .then(result => {
       res.status(result.code).send(result);
       //res.redirect('/report');
+    })
+    .catch(err => {
+      res.status(err.code).send(err);
+    });
+});
+
+
+router.get('/del/:id', function (req, res, next) {
+  InsertExpense.delInsertExpense(req.params.id)
+    .then(result => {
+      //res.status(result.code).send(result);
+      res.redirect('/report');
     })
     .catch(err => {
       res.status(err.code).send(err);

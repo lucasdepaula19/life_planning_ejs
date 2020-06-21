@@ -44,6 +44,26 @@ module.exports = {
         return objRetorno;
     },
 
+    async delInsertExpense(id) {
+        let objRetorno = {};
+        objRetorno.status = false;
+        objRetorno.code = 500;
+        
+        await db(TABLE_NAME)
+            .where('id', id)
+            .del()
+            .then(result => {
+                objRetorno.code = 200;
+                objRetorno.status = true;
+                objRetorno.data = result;
+            })
+            .catch(err => {
+                objRetorno.data = err;
+            });
+
+        return objRetorno;
+    },
+
     async getInsertExpenseName(insertExpenseName) {
         let objRetorno = {};
         await db(TABLE_NAME)
@@ -67,30 +87,14 @@ module.exports = {
             }); 
     },
 
-    async delInsertExpense(insertExpense) {
-        let obj_name = { insertion: insertExpense.fname };
-        let exit;
-    
-        await this.getInsertExpenseName(obj_name)
-            .then(result => {
-                let obj = { id: result };
-                exit = db(TABLE_NAME)
-                    .where(obj)
-                    .del()
-                    .then(function () {
-                    });
-            })
-            .catch(err => {
-                exit = err;
-            });
-        return exit;
-    },
-
     updateInsertExpense(insertExpense) {
         return db(TABLE_NAME)
             .where('id', insertExpense.id)
             .update({
                 insertion: insertExpense.fname,
+                value: insertExpense.fvalue,
+                month: insertExpense.fmonth,
+                year: insertExpense.fyear,
                 user: 'lucas.paula'
             })
             .then(function () {

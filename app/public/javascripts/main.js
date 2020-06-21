@@ -1,30 +1,9 @@
-/*
-let data = new Date();
-let zmonth = data.getMonth() + 1;
-(function actualMonth(){
-    document.getElementById('resultMonth').innerHTML = zmonth ;
-    //console.log('Teste container: '+ window.objContainer.month);
-})();
-
-function decMonth(){
-    if(zmonth <= 12 && zmonth > 1){
-        zmonth--;
-        //console.log('zmonth: ' + zmonth);
-        document.getElementById('resultMonth').innerHTML = zmonth;
-        //return zmonth;
-    }else{
-        //console.log('zmonth: ' + zmonth);
-        document.getElementById('resultMonth').innerHTML = zmonth;
-        //return zmonth;
-    }
-}
-
-function incMonth(){
-    if(zmonth < 12 && zmonth >= 1){
-        zmonth++;
-        document.getElementById('resultMonth').innerHTML = zmonth;
-    }else{
-        document.getElementById('resultMonth').innerHTML = zmonth;
-    }
-}
-*/
+$('#expenseModalInsertUpdate').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var despesa = button.data('whatever') // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+    //modal.find('.modal-title').text('New message to ' + recipient)
+    modal.find('.modal-body input').val(despesa)
+  });

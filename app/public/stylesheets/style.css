@@ -46,6 +46,11 @@ footer {
   padding: 1em;
 }
 
-.teste {
-  text-align: center !important;
+.options {
+  text-align: right !important;
+  min-width: 5em;
+}
+
+.icon {
+  margin-right: 10px;
 }

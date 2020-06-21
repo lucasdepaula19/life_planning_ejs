@@ -3,14 +3,13 @@
   <head>
     <%- include('./partials/head.ejs'); -%>
   </head>
-
   <body>
     <header class="text-center">
       <%- include('./partials/header.ejs'); -%>
     </header>
     <main role="main" class="container">
       <div class="title">
-        <h1>Reports</h1>
+        <h1>Reports  <small><%= year %> - <%= month %></small>  </h1> 
       </div>
       <div class="row">
         <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-3">
@@ -79,8 +78,6 @@
             Inserir Despesa
           </button>
         </div>
-
-          
 
         <%- include('./partials/table.ejs', {objDados, year, month}); -%>
 

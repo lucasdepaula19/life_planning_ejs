@@ -222,7 +222,7 @@
                         <label for="fyear" class="col-form-label">Ano</label>
                         <select class="form-control" name="fyear" id="fyear">
                             <option disabled selected value> -- select an option -- </option>
-                            <% for(var i = 2015; i < 2040; i++) { %>
+                            <% for(var i = 2019; i < 2040; i++) { %>
                                 <option value='<%= i %>'>
                                     <%= i %>
                                 </option>
@@ -279,7 +279,63 @@
                         <label for="fyear" class="col-form-label">Ano</label>
                         <select class="form-control" name="fyear" id="fyear">
                             <option disabled selected value> -- select an option -- </option>
-                            <% for(var i = 2015; i < 2040; i++) { %>
+                            <% for(var i = 2019; i < 2040; i++) { %>
+                                <option value='<%= i %>'>
+                                    <%= i %>
+                                </option>
+                            <% } %>
+                        </select>
+
+                        <label for="fmonth" class="col-form-label">Mês</label>
+                        <select class="form-control" name="fmonth" id="fmonth">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 1; i < 13; i++) { %>
+                                <option value='<%= i %>'>
+                                    <%= i %>
+                                </option>
+                            <% } %>
+                        </select>
+
+                        <label for="fname" class="col-form-label">Despesa</label>
+                        <select class="form-control" name="fname" id="fname">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 0; i < objDados.expenses.length; i++) { %>
+                                <option value='<%= objDados.expenses[i].name %>'>
+                                    <%= objDados.expenses[i].name %>
+                                </option>
+                            <% } %>
+                        </select>
+
+                        <label for="fvalue" class="col-form-label">Valor</label>
+                        <input type="text" class="form-control" name="fvalue" id="fvalue">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal insertExpense update  -->
+<div class="modal fade modalClass" id="expenseModalInsertUpdate" tabindex="-1" role="dialog" aria-labelledby="expenseModalInsertUpdateLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="expenseModalInsertUpdateLabel">Atualizar despesa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div>
+                <form action="/insertExpense/:id" method="POST" id="">
+                    <div class="form-group modal-body">
+                        
+                        <label for="fyear" class="col-form-label">Ano</label>
+                        <select class="form-control" name="fyear" id="fyear">
+                            <option disabled selected value> -- select an option -- </option>
+                            <% for(var i = 2019; i < 2040; i++) { %>
                                 <option value='<%= i %>'>
                                     <%= i %>
                                 </option>
