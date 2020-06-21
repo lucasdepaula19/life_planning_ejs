@@ -1,28 +1,11 @@
-
-html{
-  
-}
-
 body {
   background-color: #42006b;
   color: #fff;
 }
 
-main{
-
-}
-
 header{
   background-color: rgba(0, 0, 0, 0.2);
   margin-bottom: 1em;
-}
-
-#optionsInput {
-  /* margin: 1em;
-  width: 200px;
-  height: 100%;
-  padding: 0;
-  float: left; */
 }
 
 .buttonInput {
@@ -34,14 +17,6 @@ header{
   /* color: #fff; */
   cursor: pointer;
   /* position: relative; */
-}
-
-#mainReports {
-  /* max-width: 70%;
-  height: auto;
-  float: left;
-  margin: 1em;
-  padding: 0; */
 }
 
 .modalClass {
@@ -64,4 +39,14 @@ footer {
 .title {
   text-align: center !important;
   padding-bottom: 20px;
+}
+
+.linha1 {
+  display: inline;
+
+  padding: 1em;
+}
+
+.formDate{
+  margin: 1em;
 }

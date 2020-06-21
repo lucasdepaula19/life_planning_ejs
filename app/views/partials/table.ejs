@@ -1,0 +1,92 @@
+<!-- Tabela de despesas e receitas -->
+<div class="table-responsive col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+  <table class="table min-whith table-striped table-light table-sm">
+    <thead class="thead-light">
+      <tr>
+        <th>Categoria</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i = 0; i < objDados.insertRevenue.length; i++) { %> <% if(
+      objDados.insertExpense[i].type == 'Receita' &&
+      objDados.insertExpense[i].month == month && objDados.insertExpense[i].year
+      == year){ %>
+      <tr>
+        <td>
+          <% for(var j = 0; j < objDados.revenues.length; j++) { %> <% if(
+          objDados.revenues[j].name == objDados.insertRevenue[i].insertion ){ %>
+          <%= objDados.revenues[j].category %>
+          <!--% console.log('insertRevenue: ' + objDados.insertRevenue[1].insertion) %-->
+          <% } %> <% } %>
+        </td>
+        <td>
+          <%= objDados.insertRevenue[i].insertion %>
+        </td>
+        <td>
+          <%= objDados.insertRevenue[i].value %>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <% } %> <% } %>
+      <tr>
+        <td><b>Total de receitas</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table min-whith table-striped table-light table-sm">
+    <thead class="thead-light">
+      <tr>
+        <th>Categoria</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Vencimento</th>
+        <th>Situação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i = 0; i < objDados.insertExpense.length; i++) { %> <% if(
+      objDados.insertExpense[i].type == 'Despesa' &&
+      objDados.insertExpense[i].month == month && objDados.insertExpense[i].year
+      == year ){ %>
+      <tr>
+        <td>
+          <% for(var j = 0; j < objDados.expenses.length; j++) { %> <% if(
+          objDados.expenses[j].name == objDados.insertExpense[i].insertion ){ %>
+          <%= objDados.expenses[j].category %> <% } %> <% } %>
+        </td>
+        <td>
+          <%= objDados.insertExpense[i].insertion %>
+        </td>
+        <td>
+          <%= objDados.insertExpense[i].value %>
+        </td>
+        <td>
+          <% for(var j = 0; j < objDados.expenses.length; j++) { %> <% if(
+          objDados.expenses[j].name == objDados.insertExpense[i].insertion ){ %>
+          <%= objDados.expenses[j].due %> <% } %> <% } %>
+        </td>
+        <td>
+          <%= objDados.insertExpense[i].situation %>
+        </td>
+      </tr>
+      <% } %> <% } %>
+      <tr>
+        <td><b>Total de despesas</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

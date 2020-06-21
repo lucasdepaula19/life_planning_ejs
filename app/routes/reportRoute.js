@@ -8,17 +8,18 @@ const InsertRevenue = require('../controllers/InsertRevenueController');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  // Category.getCategory()
-  //   .then(result => {
-  //     res.render('report', { obj_category: result.data });
-  //   })
-  //   .catch(err => {
-  //     res.status(err.code).send(err);
-  //   });
+  let data = new Date();
+  let fmonth = data.getMonth() + 1;
+  let fyear = data.getFullYear();
 
+  if(req.query.fmonth != undefined && req.query.fyear != undefined){
+    fmonth = req.query.fmonth;
+    fyear = req.query.fyear;
+  }
+  
   load_dados()
     .then(result => {
-      res.render('report', { objDados: result });
+      res.render('report', { objDados: result, month: fmonth, year: fyear });
     })
     .catch(err => {
       res.status(err.code).send(err);
@@ -27,10 +28,10 @@ router.get('/', function (req, res, next) {
 
 module.exports = router;
 
-
 async function load_dados() {
   let obj_dados = {};
 
+  //promise.all para execução de vários metodos de forma assincrona
   await Category.getCategory()
     .then(result => {
       obj_dados.categories = result.data;

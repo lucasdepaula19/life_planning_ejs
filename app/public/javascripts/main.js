@@ -1,15 +1,10 @@
 /*
-function teste(){
-    alert("teste funcionou");
-}
-
-
-function decMonth(month){
-    let month = month--;
-    return month;
-}
-*/
-let zmonth = 1;
+let data = new Date();
+let zmonth = data.getMonth() + 1;
+(function actualMonth(){
+    document.getElementById('resultMonth').innerHTML = zmonth ;
+    //console.log('Teste container: '+ window.objContainer.month);
+})();
 
 function decMonth(){
     if(zmonth <= 12 && zmonth > 1){
@@ -22,9 +17,6 @@ function decMonth(){
         document.getElementById('resultMonth').innerHTML = zmonth;
         //return zmonth;
     }
-
-    
-
 }
 
 function incMonth(){
@@ -35,5 +27,4 @@ function incMonth(){
         document.getElementById('resultMonth').innerHTML = zmonth;
     }
 }
-
-
+*/
