@@ -1,9 +1,15 @@
 $('#expenseModalInsertUpdate').on('show.bs.modal', function(event) {
-    var button = $(event.relatedTarget) // Button that triggered the modal
-    var despesa = button.data('whatever') // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var button = $(event.relatedTarget)
+    var id = button.data('whateverid')
+    var year = button.data('whateveryear')
+    var month = button.data('whatevermonth')
+    var insertion = button.data('whateverinsertion')
+    var value = button.data('whatevervalue')
     var modal = $(this)
     //modal.find('.modal-title').text('New message to ' + recipient)
-    modal.find('.modal-body input').val(despesa)
+    modal.find('.modal-body #fid').val(id)
+    modal.find('.modal-body #fyear').val(year)
+    modal.find('.modal-body #fmonth').val(month)
+    modal.find('.modal-body #fname').val(insertion)
+    modal.find('.modal-body #fvalue').val(value)
   });

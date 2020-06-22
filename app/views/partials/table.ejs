@@ -1,30 +1,28 @@
 <!-- Tabela de despesas e receitas -->
 <div class="table-responsive col-xs-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
-
-    <form action="/report" method="get" class="form-inline">
-      <div class="mr-3 mb-3">
-        <select id="fyear" name="fyear" class="form-control">
-          <option selected>Choose Year...</option>
-          <% for(var i = 2019; i < 2040; i++) { %>
-            <option value='<%= i %>'>
-                <%= i %>
-            </option>
-          <% } %>
-        </select>
-      </div>
-      <div class="mr-3 mb-3">
-        <select id="fmonth" name="fmonth" class="form-control">
-          <option selected>Choose Month...</option>
-          <% for(var i = 1; i < 13; i++) { %>
-            <option value='<%= i %>'>
-                <%= i %>
-            </option>
-          <% } %>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-secondary mb-3">Filter</button> 
+  <form action="/report" method="get" class="form-inline">
+    <div class="mr-3 mb-3">
+      <select id="fyear" name="fyear" class="form-control">
+        <option selected>Choose Year...</option>
+        <% for(var i = 2019; i < 2040; i++) { %>
+        <option value="<%= i %>">
+          <%= i %>
+        </option>
+        <% } %>
+      </select>
+    </div>
+    <div class="mr-3 mb-3">
+      <select id="fmonth" name="fmonth" class="form-control">
+        <option selected>Choose Month...</option>
+        <% for(var i = 1; i < 13; i++) { %>
+        <option value="<%= i %>">
+          <%= i %>
+        </option>
+        <% } %>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-secondary mb-3">Filter</button>
   </form>
-
 
   <table class="table min-whith table-striped table-light table-sm">
     <thead class="thead-light">
@@ -60,10 +58,10 @@
         <td></td>
         <td class="options">
           <a href="" class="icon">
-            <img src="/images/icons8-editar-48.png" width="20" height="20">
+            <img src="/images/icons8-editar-48.png" width="20" height="20" />
           </a>
           <a href="" class="icon">
-            <img src="/images/icons8-excluir-64.png" width="20" height="20">
+            <img src="/images/icons8-excluir-64.png" width="20" height="20" />
           </a>
         </td>
       </tr>
@@ -116,12 +114,22 @@
           <%= objDados.insertExpense[i].situation %>
         </td>
         <td class="options">
-          <a href="" data-toggle="modal" data-target="#expenseModalInsertUpdate" data-whatever="<%= objDados.insertExpense[i].id %>" class="icon">
-              <img src="/images/icons8-editar-48.png" width="20" height="20">
+          <a
+            href="" data-toggle="modal" data-target="#expenseModalInsertUpdate" 
+            data-whateverid="<%= objDados.insertExpense[i].id %>" 
+            data-whateveryear="<%= objDados.insertExpense[i].year %>" 
+            data-whatevermonth="<%= objDados.insertExpense[i].month %>" 
+            data-whateverinsertion="<%= objDados.insertExpense[i].insertion %>" 
+            data-whatevervalue="<%= objDados.insertExpense[i].value %>" 
+            class="icon" >
+            <img src="/images/icons8-editar-48.png" width="20" height="20" />
           </a>
-            <a href="/insertExpense/del/<%= objDados.insertExpense[i].id %>" class="icon">
-              <img src="/images/icons8-excluir-64.png" width="20" height="20">
-            </a>
+          <a
+            href="/insertExpense/del/<%= objDados.insertExpense[i].id %>"
+            class="icon"
+          >
+            <img src="/images/icons8-excluir-64.png" width="20" height="20" />
+          </a>
         </td>
       </tr>
       <% } %> <% } %>
