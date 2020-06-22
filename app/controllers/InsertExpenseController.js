@@ -87,18 +87,28 @@ module.exports = {
             }); 
     },
 
-    updateInsertExpense(insertExpense) {
-        return db(TABLE_NAME)
-            .where('id', insertExpense.id)
+    async updateInsertExpense(insertExpense) {
+        let objRetorno = {};
+        objRetorno.status = false;
+        objRetorno.code = 500;
+
+        await db(TABLE_NAME)
+            .where('id', insertExpense.fid)
             .update({
                 insertion: insertExpense.fname,
-                value: insertExpense.fvalue,
-                month: insertExpense.fmonth,
                 year: insertExpense.fyear,
+                month: insertExpense.fmonth,
+                value: insertExpense.fvalue,
+                situation: insertExpense.fsituation,
                 user: 'lucas.paula'
             })
-            .then(function () {
+            .then(result => {
+                objRetorno.code = 200;
+                objRetorno.status = true;
+                objRetorno.data = result;
             });
+            
+        return objRetorno;
     }
 }
 

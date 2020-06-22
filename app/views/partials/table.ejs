@@ -57,10 +57,20 @@
         <td></td>
         <td></td>
         <td class="options">
-          <a href="" class="icon">
+          <a
+            href="" data-toggle="modal" data-target="#revenueModalInsertUpdate" 
+            data-whateverid="<%= objDados.insertRevenue[i].id %>" 
+            data-whateveryear="<%= objDados.insertRevenue[i].year %>" 
+            data-whatevermonth="<%= objDados.insertRevenue[i].month %>" 
+            data-whateverinsertion="<%= objDados.insertRevenue[i].insertion %>" 
+            data-whatevervalue="<%= objDados.insertRevenue[i].value %>" 
+            class="icon" >
             <img src="/images/icons8-editar-48.png" width="20" height="20" />
           </a>
-          <a href="" class="icon">
+          <a
+            href="/insertExpense/del/<%= objDados.insertExpense[i].id %>"
+            class="icon"
+          >
             <img src="/images/icons8-excluir-64.png" width="20" height="20" />
           </a>
         </td>

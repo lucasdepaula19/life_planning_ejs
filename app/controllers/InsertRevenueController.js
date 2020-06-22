@@ -67,34 +67,48 @@ module.exports = {
             });
     },
 
-    async delInsertRevenue(insertRevenue) {
-        let obj_name = { insertion: insertRevenue.fname };
-        let exit;
-    
-        await this.getInsertRevenueName(obj_name)
+    async delInsertRevenue(id) {
+        let objRetorno = {};
+        objRetorno.status = false;
+        objRetorno.code = 500;
+        
+        await db(TABLE_NAME)
+            .where('id', id)
+            .del()
             .then(result => {
-                let obj = { id: result };
-                exit = db(TABLE_NAME)
-                    .where(obj)
-                    .del()
-                    .then(function () {
-                    });
+                objRetorno.code = 200;
+                objRetorno.status = true;
+                objRetorno.data = result;
             })
             .catch(err => {
-                exit = err;
+                objRetorno.data = err;
             });
-        return exit;
+
+        return objRetorno;
     },
 
-    updateInsertRevenue(insertRevenue) {
-        return db(TABLE_NAME)
-            .where('id', insertRevenue.id)
+    async updateInsertRevenue(insertRevenue) {
+        let objRetorno = {};
+        objRetorno.status = false;
+        objRetorno.code = 500;
+
+        await db(TABLE_NAME)
+            .where('id', insertRevenue.fid)
             .update({
-                name: insertRevenue.fname,
+                insertion: insertRevenue.fname,
+                year: insertRevenue.fyear,
+                month: insertRevenue.fmonth,
+                value: insertRevenue.fvalue,
+                situation: insertRevenue.fsituation,
                 user: 'lucas.paula'
             })
-            .then(function () {
+            .then(result => {
+                objRetorno.code = 200;
+                objRetorno.status = true;
+                objRetorno.data = result;
             });
+
+        return objRetorno;
     }
 }
 

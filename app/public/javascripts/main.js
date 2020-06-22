@@ -13,3 +13,19 @@ $('#expenseModalInsertUpdate').on('show.bs.modal', function(event) {
     modal.find('.modal-body #fname').val(insertion)
     modal.find('.modal-body #fvalue').val(value)
   });
+
+  $('#revenueModalInsertUpdate').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget)
+    var id = button.data('whateverid')
+    var year = button.data('whateveryear')
+    var month = button.data('whatevermonth')
+    var insertion = button.data('whateverinsertion')
+    var value = button.data('whatevervalue')
+    var modal = $(this)
+    //modal.find('.modal-title').text('New message to ' + recipient)
+    modal.find('.modal-body #fid').val(id)
+    modal.find('.modal-body #fyear').val(year)
+    modal.find('.modal-body #fmonth').val(month)
+    modal.find('.modal-body #fname').val(insertion)
+    modal.find('.modal-body #fvalue').val(value)
+  });
