@@ -31,7 +31,7 @@ module.exports = router;
 async function load_dados() {
   let obj_dados = {};
 
-  //promise.all para execução de vários metodos de forma assincrona
+  //substituir por promise.all para execução de vários metodos de forma assincrona
   await Category.getCategory()
     .then(result => {
       obj_dados.categories = result.data;
