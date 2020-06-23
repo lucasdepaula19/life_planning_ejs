@@ -37,8 +37,8 @@
     </thead>
     <tbody>
       <% for(var i = 0; i < objDados.insertRevenue.length; i++) { %> <% if(
-      objDados.insertExpense[i].type == 'Receita' &&
-      objDados.insertExpense[i].month == month && objDados.insertExpense[i].year
+      objDados.insertRevenue[i].type == 'Receita' &&
+      objDados.insertRevenue[i].month == month && objDados.insertRevenue[i].year
       == year){ %>
       <tr>
         <td>
@@ -82,7 +82,17 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td style="text-align:right; padding-right: 1em;">
+          <% let somaRevenue = 0 %>
+            <% for(var i = 0; i < objDados.insertRevenue.length; i++) { %> 
+              <% if(objDados.insertRevenue[i].type == 'Receita' &&
+              objDados.insertRevenue[i].month == month && 
+              objDados.insertRevenue[i].year == year){
+                somaRevenue += parseInt(objDados.insertRevenue[i].value); %>
+              <%}%>
+            <%}%>
+            <%= somaRevenue %>.000,00
+        </td>
       </tr>
     </tbody>
   </table>
@@ -149,7 +159,17 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td style="text-align:right; padding-right: 1em;">
+            <% let somaExpense = 0 %>
+            <% for(var i = 0; i < objDados.insertExpense.length; i++) { %> 
+              <% if(objDados.insertExpense[i].type == 'Despesa' &&
+              objDados.insertExpense[i].month == month && 
+              objDados.insertExpense[i].year == year){
+                somaExpense += parseInt(objDados.insertExpense[i].value); %>
+              <%}%>
+            <%}%>
+            <%= somaExpense %>,00
+        </td>
       </tr>
     </tbody>
   </table>
