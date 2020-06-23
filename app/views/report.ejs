@@ -9,7 +9,46 @@
     </header>
     <main role="main" class="container">
       <div class="title">
-        <h1>Reports  <small><%= year %> - <%= month %></small>  </h1> 
+        <% switch(month){
+          case '1': %>
+            <h1>Reports  <small><%= year %> January</small>  </h1> 
+            <% break;
+          case '2': %>
+            <h1>Reports  <small><%= year %> February</small>  </h1> 
+            <% break;
+            case '3': %>
+            <h1>Reports  <small><%= year %> March</small>  </h1> 
+            <% break;
+            case '4': %>
+            <h1>Reports  <small><%= year %> April</small>  </h1> 
+            <% break;
+            case '5': %>
+            <h1>Reports  <small><%= year %> May</small>  </h1> 
+            <% break;
+            case '6': %>
+            <h1>Reports  <small><%= year %> June</small>  </h1> 
+            <% break;
+            case '7': %>
+            <h1>Reports  <small><%= year %> July</small>  </h1> 
+            <% break;
+            case '8': %>
+            <h1>Reports  <small><%= year %> August</small>  </h1> 
+            <% break;
+            case '9': %>
+            <h1>Reports  <small><%= year %> September</small>  </h1> 
+            <% break;
+            case '10': %>
+            <h1>Reports  <small><%= year %> October</small>  </h1> 
+            <% break;
+            case '11': %>
+            <h1>Reports  <small><%= year %> November</small>  </h1> 
+            <% break;
+            case '12': %>
+            <h1>Reports  <small><%= year %> December</small>  </h1> 
+            <% break;
+            default: %>
+            <h1>Reports  <small><%= year %> </small>  </h1>
+        <% } %>
       </div>
       <div class="row">
         <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-3">
@@ -17,57 +56,9 @@
             type="button"
             class="btn btn-outline-info buttonInput"
             data-toggle="modal"
-            data-target="#revenueModal"
-          >
-            Adicionar Receita
-          </button>
-          <button
-            type="button"
-            class="btn btn-outline-info buttonInput"
-            data-toggle="modal"
-            data-target="#expenseModal"
-          >
-            Adicionar Despesa
-          </button>
-          <button
-            type="button"
-            class="btn btn-outline-info buttonInput"
-            data-toggle="modal"
-            data-target="#categoryModal"
-          >
-            Adicionar Categoria
-          </button>
-          <button
-            type="button"
-            class="btn btn-outline-info buttonInput"
-            data-toggle="modal"
-            data-target="#expenseModalDel"
-          >
-            Remover Despesa
-          </button>
-          <button
-            type="button"
-            class="btn btn-outline-info buttonInput"
-            data-toggle="modal"
-            data-target="#revenueModalDel"
-          >
-            Remover Receita
-          </button>
-          <button
-            type="button"
-            class="btn btn-outline-info buttonInput"
-            data-toggle="modal"
-            data-target="#categoryModalDel"
-          >
-            Remover Categoria
-          </button>
-          <button
-            type="button"
-            class="btn btn-outline-info buttonInput"
-            data-toggle="modal"
             data-target="#revenueModalInsert"
           >
-            Inserir Receita
+            New Revenue entry
           </button>
           <button
             type="button"
@@ -75,8 +66,57 @@
             data-toggle="modal"
             data-target="#expenseModalInsert"
           >
-            Inserir Despesa
+            New Expense entry
           </button>
+          <button
+            type="button"
+            class="btn btn-outline-info buttonInput"
+            data-toggle="modal"
+            data-target="#revenueModal"
+          >
+            New Revenue Type
+          </button>
+          <button
+          type="button"
+          class="btn btn-outline-info buttonInput"
+          data-toggle="modal"
+          data-target="#revenueModalDel"
+        >
+          Del Revenue Type
+        </button>
+          <button
+            type="button"
+            class="btn btn-outline-info buttonInput"
+            data-toggle="modal"
+            data-target="#expenseModal"
+          >
+            New Expense Type
+          </button>
+          <button
+          type="button"
+          class="btn btn-outline-info buttonInput"
+          data-toggle="modal"
+          data-target="#expenseModalDel"
+        >
+          Del Expense Type
+        </button>
+          <button
+            type="button"
+            class="btn btn-outline-info buttonInput"
+            data-toggle="modal"
+            data-target="#categoryModal"
+          >
+            New Category
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-info buttonInput"
+            data-toggle="modal"
+            data-target="#categoryModalDel"
+          >
+            Del Category
+          </button>
+
         </div>
 
         <%- include('./partials/table.ejs', {objDados, year, month}); -%>

@@ -54,3 +54,7 @@ footer {
 .icon {
   margin-right: 10px;
 }
+
+.myTable {
+  max-width: 600px;
+}
