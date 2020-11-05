@@ -1,6 +1,11 @@
+html {
+height: 100%;
+}
+
 body {
   background-color: #42006b;
   color: #fff;
+  height: 100%;
 }
 
 header{
@@ -60,10 +65,19 @@ footer {
   min-width: 399px;
 }
 
+.container-login {
+  margin: 4em;
+  /* padding: 2em; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .login {
-  margin: 0 auto;
-  width: 25rem;
-  height: 25rem;
+  margin: 0;
+  width: 50%;
+  max-width: 30em;
+  height: 50%;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5%;
   padding: 2em;
