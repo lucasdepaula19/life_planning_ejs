@@ -59,3 +59,25 @@ footer {
   max-width: 600px;
   min-width: 399px;
 }
+
+.login {
+  margin: 0 auto;
+  width: 25rem;
+  height: 25rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5%;
+  padding: 2em;
+}
+
+.login form {
+  padding-bottom: 2em;
+}
+
+.login h2, span {
+  text-align: center;
+}
+
+.login button {
+  width: 6em;
+}
+

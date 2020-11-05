@@ -10,16 +10,17 @@
     <%- include('./partials/header.ejs'); -%>
   </header>
 
-  <div class="text-center">
-    <main role="main" class="inner cover">
-      <h1>
-        <%= title %>
-      </h1>
-      <p>Welcome to
-        <%= title %>
-      </p>
-    </main>
+  <div class="text-center title">
+    <h1>
+      <%= title %>
+    </h1>
+    <p>Welcome to
+      <%= title %>
+    </p>
   </div>
+  <main role="main" class="inner cover">
+    <%- include('./partials/login.ejs'); -%>
+  </main>
   <footer class="footer text-center">
     <%- include('./partials/footer.ejs'); -%>
   </footer>
