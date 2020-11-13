@@ -73,6 +73,14 @@ footer {
   justify-content: center;
 }
 
+.container-register {
+  margin: 4em;
+  /* padding: 2em; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .login {
   margin: 0;
   width: 50%;
@@ -81,6 +89,16 @@ footer {
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 1em;
   padding: 2em;
+}
+
+.register {
+  margin: 0;
+  width: 50%;
+  max-width: 40em;
+  height: 50%;
+  background-color: rgba(119, 117, 117, 0.89);
+  /* border-radius: 1em; */
+  padding: 4em;
 }
 
 .login form {
@@ -94,4 +112,3 @@ footer {
 .login button {
   width: 6em;
 }
-
