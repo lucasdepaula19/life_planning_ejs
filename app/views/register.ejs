@@ -13,18 +13,18 @@
     <main role="main" class="inner cover"> 
         <div class="container-register">
           <div class="register">
-            <form action="/register" method="POST">
+            <form action="/user" method="POST">
                 <div class="form-group">
-                    <label for="inputUser"><b>Full Name</b></label>
-                    <input type="name" class="form-control" id="inputName" placeholder="Insert your name">
+                    <label for="fname"><b>Full Name</b></label>
+                    <input type="name" class="form-control" id="fname" name="fname" placeholder="Insert your name">
                 </div>
                 <div class="form-group">
-                    <label for="inputUser">User</label>
-                    <input type="user" class="form-control" id="inputUser" placeholder="Create user">
+                    <label for="fuser"><b>User</b></label>
+                    <input type="user" class="form-control" id="fuser" name="fuser" placeholder="Create user">
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Create Password">
+                    <label for="fpassword"><b>Password</b></label>
+                    <input type="password" class="form-control" id="fpassword" name="fpassword" placeholder="Create Password">
                 </div>
                 <button type="submit" class="btn btn-primary">Register</button>
             </form>
