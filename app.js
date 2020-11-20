@@ -18,6 +18,7 @@ var insertExpenseRouter = require('./app/routes/insertExpenseRoute');
 var insertRevenueRouter = require('./app/routes/insertRevenueRoute');
 var expenseRouter = require('./app/routes/expenseRoute');
 var revenueRouter = require('./app/routes/revenueRoute');
+var loginRouter = require('./app/routes/loginRoute');
 
 
 var app = express();
@@ -47,6 +48,7 @@ app.use('/insertExpense', insertExpenseRouter);
 app.use('/insertRevenue', insertRevenueRouter);
 app.use('/expense', expenseRouter);
 app.use('/revenue', revenueRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

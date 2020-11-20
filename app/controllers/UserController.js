@@ -1,7 +1,7 @@
 const knex = require('knex')
 const knexConfigs = require('../../knexfile')
 const db = knex(knexConfigs.development)
-
+const crypto = require("crypto");
 const TABLE_NAME = 'tb_users'
 
 module.exports = {
@@ -60,7 +60,11 @@ module.exports = {
 
     newUser(user) {
         let obj = { user: user.fuser, name: user.fname, password: user.fpassword }
-        //return db.insert(obj).into(TABLE_NAME)
+        
+        let senha_criptografada = crypto.createHash("md5").update(obj.password).digest("hex");
+
+        obj.password = senha_criptografada;
+
         return db(TABLE_NAME)
             .insert(obj)
             .then(function () {

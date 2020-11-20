@@ -96,7 +96,7 @@ footer {
   width: 50%;
   max-width: 40em;
   height: 50%;
-  background-color: rgba(119, 117, 117, 0.89);
+  /* background-color: rgba(66, 64, 64, 0.89); */
   /* border-radius: 1em; */
   padding: 4em;
 }
